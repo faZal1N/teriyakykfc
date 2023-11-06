@@ -3,6 +3,7 @@ from django.db import models
 from people.helper import unique_slugify
 
 
+# модель события
 class Event(models.Model):
     name = models.CharField(name='name', max_length=255)
     slug = models.SlugField(name='slug', db_index=True, unique=True)
@@ -27,6 +28,7 @@ class Event(models.Model):
         return self.name
 
 
+# модель локальной карты
 class LocalMap(models.Model):
     name = models.CharField(name='name', max_length=255)
     slug = models.SlugField(name='slug', db_index=True, unique=True)

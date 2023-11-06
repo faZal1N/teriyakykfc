@@ -7,12 +7,14 @@ import os
 from people.helper import unique_slugify
 
 
+# чтобы у всех файлов были оригинальные имена
 def get_file_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "%s.%s" % (uuid.uuid4(), ext)
     return os.path.join(instance.directory_string_var, filename)
 
 
+# таблица людей
 class Person(models.Model):
     name = models.CharField(name='name', max_length=255)
     slug = models.SlugField(name='slug', db_index=True, unique=True)

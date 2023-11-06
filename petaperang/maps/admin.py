@@ -4,7 +4,7 @@ from maps.models import Event, LocalMap
 from people.models import Person
 
 
-# Register your models here.
+# Регистрация баз данных в админке
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
