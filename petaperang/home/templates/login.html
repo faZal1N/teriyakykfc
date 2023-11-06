@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block addons %}
+    <link rel="stylesheet" href="{% static 'home/css/tilda-blocks-page40841034.min.css' %}" type="text/css" media="all"
+          onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-forms-1.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-cover-1.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/fonts-tildasans.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <script nomodule src="{% static 'home/js/tilda-polyfill-1.0.min.js' %}" charset="utf-8"></script>
+{% endblock %}
+
+
+{% block content %}
+<div id="rec660703079" class="r t-rec" style=" " data-animationappear="off" data-record-type="698"><!-- t698 -->
+        <!-- cover -->
+        <div class="t-cover"
+             id="recorddiv660703079"
+             bgimgfield="img"
+             style="height:100vh; background-image:url('images/tild6136-6363-4363-b138-306637386562__-__resize__20x__1613766775_16-p-fon-.jpg');"
+        >
+            <div class="t-cover__carrier" id="coverCarry660703079" data-content-cover-id="660703079"
+                 data-content-cover-bg="{% static 'home/images/tild6136-6363-4363-b138-306637386562__1613766775_16-p-fon-.jpg' %}"
+                 data-display-changed="true" data-content-cover-height="100vh" data-content-cover-parallax=""
+                 style="height:100vh;background-attachment:scroll; " itemscope itemtype="http://schema.org/ImageObject">
+                <meta itemprop="image" content="{% static 'home/images/tild6136-6363-4363-b138-306637386562__1613766775_16-p-fon-.jpg' %}">
+            </div>
+            <div class="t-cover__filter"
+                 style="height:100vh;background-color:#29221c;filter: alpha(opacity:70); KHTMLOpacity: 0.70; MozOpacity: 0.70; opacity: 0.70;"></div>
+            <div class="t698">
+                <div class="t-container ">
+                    <div class="t-width t-width_8 t698__mainblock">
+                        <div class="t-cover__wrapper t-valign_middle" style="height:100vh;">
+                            <div class="t698__mainwrapper" data-hook-content="covercontent">
+                                <div class="t698__title t-title t-title_xs" style="" field="title">Вход в аккаунт</div>
+                                <div>
+                                    <form id="form660703079" name='form660703079' role="form" method='POST'
+                                          data-formactiontype="0" data-inputbox=".t-input-group"
+                                          class="t-form t-form_inputs-total_2">
+                                        {% csrf_token %}
+                                        <div class="t-form__inputsbox">
+                                            {% for i in form %}
+                                            <div class="t-input-group t-input-group_in">
+                                                <div class="t-input-block"
+                                                     style="border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px;">
+                                                    {{ i }}
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+
+                                            {% if enter_exception == 1 %}
+                                            <div class="t698__form-bottom-text t-text t-text_xs" field="text">Ошибка при вводе пароля или логина</div>
+                                            {% endif %}
+                                            <div class="t-form__submit">
+                                                <button type="submit" class="blackbutton t-submit">
+                                                    Sign up
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <style>
+#rec660703079 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 input::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 input:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 input:-ms-input-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 textarea::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 textarea::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 textarea:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec660703079 textarea:-ms-input-placeholder {color:#000000; opacity: 0.5;}
+                                    </style>
+                                </div>
+                                <div class="t698__form-bottom-text t-text t-text_xs" field="text"><a href="{% url 'registration' %}" style="color:#ffffff">Регистрация</a><br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>if (typeof jQuery !== 'undefined') {
+$('#rec660703079').find('.js-form-proccess').on('tildaform:aftererror', function(e){
+e.preventDefault();
+t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660703079');});
+});
+$('.t698').bind('displayChanged',function(){
+t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660703079');});
+});
+} else {
+var formBlock = document.querySelector('#rec660703079 .js-form-proccess');
+if (formBlock) {
+formBlock.addEventListener('tildaform:aftererror', function(e){
+e.preventDefault();
+t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660703079');});
+});
+}
+var wrapperBlock = document.querySelector('#rec660703079 .t698');
+if (wrapperBlock) {
+wrapperBlock.addEventListener('displayChanged',function(){
+t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660703079');});
+});
+}
+}
+window.addEventListener('load', function() {
+setTimeout(function() {
+t_onFuncLoad('t_cover__setRecalculatedHeight', function () {
+var rec = document.getElementById('rec660703079');
+if (rec) {
+var content = rec.querySelector('div[data-hook-content]');
+var contentHeight = content ? t_cover__getPureHeight(content) : 0;
+t_cover__setRecalculatedHeight(rec, contentHeight);
+}
+});
+}, 500);
+});
+        </script>
+</div>
+{% endblock %}

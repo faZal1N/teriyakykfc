@@ -1,0 +1,285 @@
+{% extends "people.html" %}
+{% load static %}
+
+
+{% block content %}
+    <script src="{% static 'home/js/map.js' %}" type="text/javascript"></script>
+<style>
+        body {
+           background:url({% static 'home/images/tild3163-3764-4937-a239-343032626332__1670825509_3-27.jpg'%}) no-repeat center center fixed  #fff5e4;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+</style>>
+
+<script>
+
+
+    function map_search(searchtext){
+        return $.ajax({
+            method: "GET",
+            data: {term: searchtext},
+            url: "search/",
+            async: false,
+        });
+   }
+
+ymaps.ready(init);
+massiv_a=[
+                // Координаты вершин внешнего контура.
+                [
+                    [55.75, 37.80],
+                    [55.80, 37.90],
+                    [55.75, 38.00],
+                    [55.70, 38.00],
+                    [55.70, 37.80]
+                ],
+                // Координаты вершин внутреннего контура.
+                [
+                    [55.75, 37.82],
+                    [55.75, 37.98],
+                    [55.65, 37.90]
+                ]
+            ];
+Massiv_b=[
+                // Координаты вершин внешнего контура.
+                [
+                    [55.75, 37.80],
+                    [55.80, 37.90],
+                    [55.75, 38.00],
+                    [55.70, 38.00],
+                    [55.70, 37.80]
+                ],
+                // Координаты вершин внутреннего контура.
+                [
+                    [55.75, 37.82],
+                    [55.75, 37.98],
+                    [55.65, 37.90]
+                ]
+            ];
+
+
+
+function init() {
+
+var data = ymaps.geoXml.load("http://vitalik.nekrasoff.ru/kml/0001.kml");
+data.then(function(res) { // Обработка полученного асинхронно ответа.
+    myMap.geoObjects.add(res.geoObjects);     // Добавление объектов на карту.
+});
+
+    var myMap = new ymaps.Map("map", {
+            center: [55.73, 37.75],
+            zoom: 11,
+            controls: [], // Убираем все элементы управления
+                    size: (100, 100),
+
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+
+
+    // Создаем многоугольник, используя класс GeoObject.
+    var myGeoObject = new ymaps.GeoObject({
+        // Описываем геометрию геообъекта.
+        geometry: {
+            // Тип геометрии - "Многоугольник".
+            type: "Polygon",
+            // Указываем координаты вершин многоугольника.
+            coordinates: massiv_a,
+            // Задаем правило заливки внутренних контуров по алгоритму "nonZero".
+            fillRule: "nonZero"
+        },
+        // Описываем свойства геообъекта.
+        properties:{
+            // Содержимое балуна.
+            balloonContent: "Многоугольник"
+        }
+    }, {
+        // Описываем опции геообъекта.
+        // Цвет заливки.
+        fillColor: '#00FF00',
+        // Цвет обводки.
+        strokeColor: '#0000FF',
+        // Общая прозрачность (как для заливки, так и для обводки).
+        opacity: 0.5,
+        // Ширина обводки.
+        strokeWidth: 5,
+        // Стиль обводки.
+        strokeStyle: 'shortdash'
+    });
+
+    // Добавляем многоугольник на карту.
+    myMap.geoObjects.add(myGeoObject);
+
+    // Создаем многоугольник, используя вспомогательный класс Polygon.
+    var myPolygon = new ymaps.Polygon([
+        // Указываем координаты вершин многоугольника.
+        // Координаты вершин внешнего контура.
+        [
+            [55.75, 37.50],
+            [55.80, 37.60],
+            [55.75, 37.70],
+            [55.70, 37.70],
+            [55.70, 37.50]
+        ],
+        // Координаты вершин внутреннего контура.
+        [
+            [55.75, 37.52],
+            [55.75, 37.68],
+            [55.65, 37.60]
+        ]
+    ], {
+        // Описываем свойства геообъекта.
+        // Содержимое балуна.
+        hintContent: "Многоугольник"
+    }, {
+        // Задаем опции геообъекта.
+        // Цвет заливки.
+        fillColor: '#00FF0088',
+        // Ширина обводки.
+        strokeWidth: 5
+    });
+
+    // Добавляем многоугольник на карту.
+    myMap.geoObjects.add(myPolygon);
+
+
+    let i = 37.820
+       // setInterval(function () {
+                    myGeoObject.geometry.setCoordinates ([
+                    // Координаты вершин внешнего контура.
+                    [
+                        [55.75, 37.80],
+                        [55.80, 37.90],
+                        [55.75, 38.00],
+                        [55.70, 38.00],
+                        [55.70, 37.80]
+                    ],
+                    // Координаты вершин внутреннего контура.
+                    [
+                        [55.75, i],
+                        [55.75, 37.98],
+                        [55.65, 37.90]
+                    ]
+                ]
+             );
+             i+=0.001
+        //console.log (myGeoObject.geometry);
+        //console.log (i);
+     //   }, 1);
+
+
+
+    $.when(map_search('')).done((map_data) => {
+        console.log (map_data);
+        for(var event of map_data){
+
+            myMap.geoObjects.add(new ymaps.Placemark([event.x, event.y], {
+                iconCaption: event.name,
+                balloonContent: (event.name + '<br>' + event.description + '<br>' + event.begin + '-' + event.end),
+            }, {
+                preset: 'islands#dotIcon',
+                iconColor: '#735184'
+            }))
+        }
+    });
+}
+
+
+
+
+
+
+
+
+$(function() {
+
+    function items_search(searchtext){
+        return $.ajax({
+            method: "GET",
+            data: {term: searchtext},
+            url: "search/",
+            async: false,
+        });
+    }
+
+    $('input[name=search_engine]').bind({
+        keyup: function(e){
+            console.log (e.target.value);
+            $.when(items_search(e.target.value)).done((data) => {
+                console.log (data);
+                search_to_window(data);
+            });
+        }
+    });
+
+    function search_to_window(data){
+        $('#items_div').empty();
+        for(var item of data){
+             $('#items_div').append(
+                 '<div class="t403__container-table t-width_12 shadowcontent" style="margin-top: 10px; background-color: #fff5e4; opacity: 0.9;">'+
+                    '<a class="t403__link" href="'+item.slug+'">'+
+                        '<div class="t403__tcol2 t403__tcol2_flipped" >'+
+                                '<div class="t403__title t-title t-title_xxs" style="padding:20px;">'+item.name+'</div>'+
+                                '<div class="t403__text t-text t-text_md" style="padding:20px;">'+item.begin+'-'+item.end+'</div>'+
+                                '<div class="t403__descr t-descr t-descr_sm" style="padding:20px;">'+item.description+'</div>'+
+                        '</div>'+
+                        '<div class="t403__tcol1" id=map'+item.id+'></div>'+
+                    '</a>'+
+                 '</div>'
+             );
+             insert_map (item);
+        };
+    };
+
+    function insert_map (item) {
+        var myMap = new ymaps.Map("map"+item.id, {
+            center: [item.x, item.y],
+            zoom: 11,
+            controls: [], // Убираем все элементы управления
+            size: (100, 100),
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+        myMap.geoObjects.add(new ymaps.Placemark([item.x, item.y], {
+            iconCaption: item.name,
+            balloonContent: (item.name + '<br>' + item.description + '<br>' + item.begin + '-' + item.end),
+        }, {
+            preset: 'islands#dotIcon',
+            iconColor: '#735184'
+        }))
+    }
+});
+
+
+
+    </script>
+
+    <div class="content t-container" style="padding-top:90px;padding-bottom:50px;">
+        <input type="text" name="search_engine"
+               id="input_4914859299010"
+               class="t-input js-tilda-rule"
+               placeholder="Поиск события на карте"
+               style="color:#000000;border:1px solid #000000;">
+    </div>
+
+    <div class="t403 footer"  id="items_div" >
+    </div>
+
+     <div class="t403__container-table t-width_12 " style="margin-top: 10px; background-color: #fff5e4;  opacity: 0.9;">
+            <div class="t403__tcol1_flipped" >
+                <div class="t403__title t-title t-title_xxs" style="padding:20px;">Бородинское </div>
+                <div class="t403__descr t-descr t-descr_sm" style="padding:20px;">'фаывпывап</div>
+            </div>
+            <div class="t403__tcol2" id="map" >
+            </div>
+     </div>
+
+
+
+
+
+{% endblock %}

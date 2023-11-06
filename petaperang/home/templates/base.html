@@ -1,0 +1,939 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Многоугольник</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+        <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Header</title>
+    <meta name="description" content="Header"/>
+    <meta property="og:url" content="page40801407.html"/>
+    <meta property="og:title" content="Header"/>
+    <meta property="og:description" content="Header"/>
+    <meta property="og:type" content="website"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="shortcut icon" href="{% static 'home/images/tildafavicon.ico' %}" type="image/x-icon"/><!-- Assets -->
+    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"  charset="utf-8"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"  charset="utf-8"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="{% static 'home/css/tilda-grid-3.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-blocks-page40801407.min.css' %}" type="text/css" media="all"
+          onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/fonts-tildasans.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+        <link rel="stylesheet" href="{% static '/home/css/tilda-blocks-page40839390.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <style>
+        body {
+           background:url({% static 'home/images/tild3562-3464-4364-a130-373566313864__1613766775_16-p-fon-.jpg'%}) no-repeat center center fixed  #fff5e4;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        html {
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+            overflow-y: scroll;
+        }
+        ::-webkit-scrollbar {
+            display: none; /* for Chrome, Safari, and Opera */
+        }
+        .t-title {
+            font-weight: 300 !important;
+        }
+        .t-input {
+            opacity: 0.7;
+        }
+        .t134__descr{
+            color:#ffffff !important;
+            opacity: 0.8;
+
+        }
+        .profilevalue {
+            background:#ffffff26 !important;
+            text-align:left;
+            color:#ffffff;
+            width:100%;
+            height:25px;
+            margin:5px;
+            padding:10px;
+            border-radius:7px;
+            -moz-border-radius:7px;
+            -webkit-border-radius:7px;
+        }
+        .blackbutton {
+            font-weight: 300 !important;
+            background:#000000a3 !important;
+            color:#ffffff;
+            border-radius:7px;
+            -moz-border-radius:7px;
+            -webkit-border-radius:7px;
+        }
+
+        .shadowcontent {
+            margin:10px;
+            /* padding: 5px;  This creates a border around the image */
+            border: 3px solid #FFFFFF; /* A 1 pixel greyish border is applied to the white border created by the padding */
+            position: relative;
+            -webkit-box-shadow: 0 0 16px #8a6221FF;
+            -moz-box-shadow: 0 0 16px #8a6221FF;
+            box-shadow: 0 0 16px #8a6221FF;
+        }
+        .flex-container {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 1px solid silver;
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .nowrap  {
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        }
+        .wrap    {
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .ymaps-2-1-79-controls__control_toolbar{
+             display: none !important;
+        }
+        .ymaps-2-1-79-map-copyrights-promo{
+             display: none !important;
+        }
+    </style>
+    <script nomodule src="{% static 'home/js/tilda-polyfill-1.0.min.js' %}" charset="utf-8"></script>
+    <script type="text/javascript">function t_onReady(func) {
+if (document.readyState != 'loading') {
+func();
+} else {
+document.addEventListener('DOMContentLoaded', func);
+}
+}
+function t_onFuncLoad(funcName, okFunc, time) {
+if (typeof window[funcName] === 'function') {
+okFunc();
+} else {
+setTimeout(function() {
+t_onFuncLoad(funcName, okFunc, time);
+},(time || 100));
+}
+}
+    </script>
+    <script src="{% static 'home/js/tilda-scripts-3.0.min.js' %}" charset="utf-8" defer onerror="this.loaderr='y';"></script>
+    <script src="{% static 'home/js/tilda-blocks-page40801407.min.js' %}" charset="utf-8" async
+            onerror="this.loaderr='y';"></script>
+    <script src="{% static 'home/js/tilda-lazyload-1.0.min.js' %}" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script src="{% static 'home/js/tilda-menu-1.0.min.js' %}" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script src="{% static 'home/js/tilda-skiplink-1.0.min.js' %}" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script src="{% static 'home/js/tilda-events-1.0.min.js' %}" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script type="text/javascript">window.dataLayer = window.dataLayer || [];</script>
+    <script type="text/javascript">(function () {
+        if((/bot|google|yandex|baidu|bing|msn|duckduckbot|teoma|slurp|crawler|spider|robot|crawling|facebook/i.test(navigator.userAgent))===false && typeof(sessionStorage)!='undefined' && sessionStorage.getItem('visited')!=='y' && document.visibilityState){
+        var style=document.createElement('style');
+        style.type='text/css';
+        style.innerHTML='@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}';
+        document.getElementsByTagName('head')[0].appendChild(style);
+        function t_setvisRecs(){
+        var alr=document.querySelectorAll('.t-records');
+        Array.prototype.forEach.call(alr, function(el) {
+        el.classList.add("t-records_animated");
+        });
+        setTimeout(function () {
+        Array.prototype.forEach.call(alr, function(el) {
+        el.classList.add("t-records_visible");
+        });
+        sessionStorage.setItem("visited", "y");
+        }, 400);
+        }
+        document.addEventListener('DOMContentLoaded', t_setvisRecs);
+        }
+        })();
+    </script>
+
+    {% block addons %}
+    {% endblock addons %}
+</head>
+<body class="t-body" style="margin:0;">
+{% block header %}
+<div data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node"
+     data-tilda-project-id="8057011" data-tilda-page-id="40801407"
+     data-tilda-formskey="708e04c2f56f92cd3f84445be8057011" data-tilda-cookie="no" data-tilda-lazy="yes">
+    <div id="rec660687939" class="r t-rec" style=" " data-animationappear="off" data-record-type="451"><!-- T451 -->
+        <div id="nav660687939marker"></div>
+        <div id="nav660687939" class="t451" data-menu="yes">
+            <div class="t451__container t451__positionfixed t451__panel " data-appearoffset="" style="height: 70px;">
+                <div class="t451__container__bg" style="background-color: rgb(138 98 33); "
+                     data-bgcolor-hex="#b5873c" data-bgcolor-rgba="rgb(138 98 33)"
+                     data-navmarker="nav660687939marker" data-appearoffset="" data-bgopacity="1"
+                     data-menushadow="0px 1px 3px rgba(0,0,0,0.)"></div>
+                <div class="t451__menu__content ">
+                    <div class="t451__burger-wrapper__mobile">
+                        <button type="button"
+                                class="t-menuburger t-menuburger_first "
+                                aria-label="Навигационное меню"
+                                aria-expanded="false"><span style="background-color:#ffffff;"></span><span
+                                style="background-color:#ffffff;"></span><span style="background-color:#ffffff;"></span><span
+                                style="background-color:#ffffff;"></span></button>
+                        <script>function t_menuburger_init(recid) {
+var rec = document.querySelector('#rec' + recid);
+if (!rec) return;
+var burger = rec.querySelector('.t-menuburger');
+if (!burger) return;
+var isSecondStyle = burger.classList.contains('t-menuburger_second');
+if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) {
+burger.addEventListener('mouseenter', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-unhovered');
+burger.classList.add('t-menuburger-hovered');
+});
+burger.addEventListener('mouseleave', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-hovered');
+burger.classList.add('t-menuburger-unhovered');
+setTimeout(function() {
+burger.classList.remove('t-menuburger-unhovered');
+}, 300);
+});
+}
+burger.addEventListener('click', function() {
+if (!burger.closest('.tmenu-mobile') &&
+!burger.closest('.t450__burger_container') &&
+!burger.closest('.t466__container') &&
+!burger.closest('.t204__burger') &&
+!burger.closest('.t199__js__menu-toggler')) {
+burger.classList.toggle('t-menuburger-opened');
+burger.classList.remove('t-menuburger-unhovered');
+}
+});
+var menu = rec.querySelector('[data-menu="yes"]');
+if (!menu) return;
+var menuLinks = menu.querySelectorAll('.t-menu__link-item');
+var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link'];
+Array.prototype.forEach.call(menuLinks, function (link) {
+link.addEventListener('click', function () {
+var isSubmenuHook = submenuClassList.some(function (submenuClass) {
+return link.classList.contains(submenuClass);
+});
+if (isSubmenuHook) return;
+burger.classList.remove('t-menuburger-opened');
+});
+});
+menu.addEventListener('clickedAnchorInTooltipMenu', function () {
+burger.classList.remove('t-menuburger-opened');
+});
+}
+t_onReady(function() {
+t_onFuncLoad('t_menuburger_init', function(){t_menuburger_init('660687939');});
+});
+                        </script>
+                        <style>.t-menuburger {
+position: relative;
+flex-shrink: 0;
+width: 28px;
+height: 20px;
+padding: 0;
+border: none;
+background-color: transparent;
+outline: none;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: transform .5s ease-in-out;
+cursor: pointer;
+z-index: 999;
+}
+/*---menu burger lines---*/
+.t-menuburger span {
+display: block;
+position: absolute;
+width: 100%;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: .25s ease-in-out;
+height: 3px;
+background-color: #000;
+}
+.t-menuburger span:nth-child(1) {
+top: 0px;
+}
+.t-menuburger span:nth-child(2),
+.t-menuburger span:nth-child(3) {
+top: 8px;
+}
+.t-menuburger span:nth-child(4) {
+top: 16px;
+}
+/*menu burger big*/
+.t-menuburger__big {
+width: 42px;
+height: 32px;
+}
+.t-menuburger__big span {
+height: 5px;
+}
+.t-menuburger__big span:nth-child(2),
+.t-menuburger__big span:nth-child(3) {
+top: 13px;
+}
+.t-menuburger__big span:nth-child(4) {
+top: 26px;
+}
+/*menu burger small*/
+.t-menuburger__small {
+width: 22px;
+height: 14px;
+}
+.t-menuburger__small span {
+height: 2px;
+}
+.t-menuburger__small span:nth-child(2),
+.t-menuburger__small span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger__small span:nth-child(4) {
+top: 12px;
+}
+/*menu burger opened*/
+.t-menuburger-opened span:nth-child(1) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.t-menuburger-opened span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+.t-menuburger-opened span:nth-child(4) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(1) {
+top: 6px;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(4) {
+top: 18px;
+}
+.t-menuburger-opened.t-menuburger__small span:nth-child(1),
+.t-menuburger-opened.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+/*---menu burger first style---*/
+@media (hover), (min-width:0\0) {
+.t-menuburger_first:hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_first:hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+/*---menu burger second style---*/
+.t-menuburger_second span:nth-child(2),
+.t-menuburger_second span:nth-child(3) {
+width: 80%;
+left: 20%;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_second.t-menuburger-hovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-hovered span:nth-child(3) {
+animation: t-menuburger-anim 0.3s ease-out normal forwards;
+}
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(3) {
+animation: t-menuburger-anim2 0.3s ease-out normal forwards;
+}
+}
+.t-menuburger_second.t-menuburger-opened span:nth-child(2),
+.t-menuburger_second.t-menuburger-opened span:nth-child(3){
+left: 0;
+right: 0;
+width: 100%!important;
+}
+/*---menu burger third style---*/
+.t-menuburger_third span:nth-child(4) {
+width: 70%;
+left: unset;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_third:not(.t-menuburger-opened):hover span:nth-child(4) {
+width: 100%;
+}
+}
+.t-menuburger_third.t-menuburger-opened span:nth-child(4) {
+width: 0!important;
+right: 50%;
+}
+/*---menu burger fourth style---*/
+.t-menuburger_fourth {
+height: 12px;
+}
+.t-menuburger_fourth.t-menuburger__small {
+height: 8px;
+}
+.t-menuburger_fourth.t-menuburger__big {
+height: 18px;
+}
+.t-menuburger_fourth span:nth-child(2),
+.t-menuburger_fourth span:nth-child(3) {
+top: 4px;
+opacity: 0;
+}
+.t-menuburger_fourth span:nth-child(4) {
+top: 8px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__big span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(4) {
+top: 12px;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(1),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(4) {
+top: 4px;
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(2),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(3) {
+opacity: 1;
+}
+/*---menu burger animations---*/
+@keyframes t-menuburger-anim {
+0% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+50% {
+width: 100%;
+left: 0;
+right: 0;
+}
+100% {
+width: 80%;
+left: 0;
+right: 20%;
+}
+}
+@keyframes t-menuburger-anim2 {
+0% {
+width: 80%;
+left: 0;
+}
+50% {
+width: 100%;
+right: 0;
+left: 0;
+}
+100% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+}
+                        </style>
+                    </div>
+                    <div class="t451__leftside t451__side t451__side_burger">
+                        <button type="button"
+                                class="t-menuburger t-menuburger_first "
+                                aria-label="Навигационное меню"
+                                aria-expanded="false"><span style="background-color:#ffffff;"></span><span
+                                style="background-color:#ffffff;"></span><span style="background-color:#ffffff;"></span><span
+                                style="background-color:#ffffff;"></span></button>
+                        <script>function t_menuburger_init(recid) {
+var rec = document.querySelector('#rec' + recid);
+if (!rec) return;
+var burger = rec.querySelector('.t-menuburger');
+if (!burger) return;
+var isSecondStyle = burger.classList.contains('t-menuburger_second');
+if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) {
+burger.addEventListener('mouseenter', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-unhovered');
+burger.classList.add('t-menuburger-hovered');
+});
+burger.addEventListener('mouseleave', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-hovered');
+burger.classList.add('t-menuburger-unhovered');
+setTimeout(function() {
+burger.classList.remove('t-menuburger-unhovered');
+}, 300);
+});
+}
+burger.addEventListener('click', function() {
+if (!burger.closest('.tmenu-mobile') &&
+!burger.closest('.t450__burger_container') &&
+!burger.closest('.t466__container') &&
+!burger.closest('.t204__burger') &&
+!burger.closest('.t199__js__menu-toggler')) {
+burger.classList.toggle('t-menuburger-opened');
+burger.classList.remove('t-menuburger-unhovered');
+}
+});
+var menu = rec.querySelector('[data-menu="yes"]');
+if (!menu) return;
+var menuLinks = menu.querySelectorAll('.t-menu__link-item');
+var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link'];
+Array.prototype.forEach.call(menuLinks, function (link) {
+link.addEventListener('click', function () {
+var isSubmenuHook = submenuClassList.some(function (submenuClass) {
+return link.classList.contains(submenuClass);
+});
+if (isSubmenuHook) return;
+burger.classList.remove('t-menuburger-opened');
+});
+});
+menu.addEventListener('clickedAnchorInTooltipMenu', function () {
+burger.classList.remove('t-menuburger-opened');
+});
+}
+t_onReady(function() {
+t_onFuncLoad('t_menuburger_init', function(){t_menuburger_init('660687939');});
+});
+                        </script>
+                        <style>.t-menuburger {
+position: relative;
+flex-shrink: 0;
+width: 28px;
+height: 20px;
+padding: 0;
+border: none;
+background-color: transparent;
+outline: none;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: transform .5s ease-in-out;
+cursor: pointer;
+z-index: 999;
+}
+/*---menu burger lines---*/
+.t-menuburger span {
+display: block;
+position: absolute;
+width: 100%;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: .25s ease-in-out;
+height: 3px;
+background-color: #000;
+}
+.t-menuburger span:nth-child(1) {
+top: 0px;
+}
+.t-menuburger span:nth-child(2),
+.t-menuburger span:nth-child(3) {
+top: 8px;
+}
+.t-menuburger span:nth-child(4) {
+top: 16px;
+}
+/*menu burger big*/
+.t-menuburger__big {
+width: 42px;
+height: 32px;
+}
+.t-menuburger__big span {
+height: 5px;
+}
+.t-menuburger__big span:nth-child(2),
+.t-menuburger__big span:nth-child(3) {
+top: 13px;
+}
+.t-menuburger__big span:nth-child(4) {
+top: 26px;
+}
+/*menu burger small*/
+.t-menuburger__small {
+width: 22px;
+height: 14px;
+}
+.t-menuburger__small span {
+height: 2px;
+}
+.t-menuburger__small span:nth-child(2),
+.t-menuburger__small span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger__small span:nth-child(4) {
+top: 12px;
+}
+/*menu burger opened*/
+.t-menuburger-opened span:nth-child(1) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.t-menuburger-opened span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+.t-menuburger-opened span:nth-child(4) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(1) {
+top: 6px;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(4) {
+top: 18px;
+}
+.t-menuburger-opened.t-menuburger__small span:nth-child(1),
+.t-menuburger-opened.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+/*---menu burger first style---*/
+@media (hover), (min-width:0\0) {
+.t-menuburger_first:hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_first:hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+/*---menu burger second style---*/
+.t-menuburger_second span:nth-child(2),
+.t-menuburger_second span:nth-child(3) {
+width: 80%;
+left: 20%;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_second.t-menuburger-hovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-hovered span:nth-child(3) {
+animation: t-menuburger-anim 0.3s ease-out normal forwards;
+}
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(3) {
+animation: t-menuburger-anim2 0.3s ease-out normal forwards;
+}
+}
+.t-menuburger_second.t-menuburger-opened span:nth-child(2),
+.t-menuburger_second.t-menuburger-opened span:nth-child(3){
+left: 0;
+right: 0;
+width: 100%!important;
+}
+/*---menu burger third style---*/
+.t-menuburger_third span:nth-child(4) {
+width: 70%;
+left: unset;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_third:not(.t-menuburger-opened):hover span:nth-child(4) {
+width: 100%;
+}
+}
+.t-menuburger_third.t-menuburger-opened span:nth-child(4) {
+width: 0!important;
+right: 50%;
+}
+/*---menu burger fourth style---*/
+.t-menuburger_fourth {
+height: 12px;
+}
+.t-menuburger_fourth.t-menuburger__small {
+height: 8px;
+}
+.t-menuburger_fourth.t-menuburger__big {
+height: 18px;
+}
+.t-menuburger_fourth span:nth-child(2),
+.t-menuburger_fourth span:nth-child(3) {
+top: 4px;
+opacity: 0;
+}
+.t-menuburger_fourth span:nth-child(4) {
+top: 8px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__big span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(4) {
+top: 12px;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(1),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(4) {
+top: 4px;
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(2),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(3) {
+opacity: 1;
+}
+/*---menu burger animations---*/
+@keyframes t-menuburger-anim {
+0% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+50% {
+width: 100%;
+left: 0;
+right: 0;
+}
+100% {
+width: 80%;
+left: 0;
+right: 20%;
+}
+}
+@keyframes t-menuburger-anim2 {
+0% {
+width: 80%;
+left: 0;
+}
+50% {
+width: 100%;
+right: 0;
+left: 0;
+}
+100% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+}
+                        </style>
+                    </div>
+                    <div class="t451__centerside t451__side">
+                        <div class="t451__logo__container t451__textlogo__container">
+                            <div class="t451__logo__content">
+                                <div field="title" class="t-heading t-heading_xs" style="">
+                                    {% block headername %}
+                                        <span style="color: #ffffffcc; font-weight: 500; letter-spacing: 3px;">
+                                           SITIUM
+                                        </span>
+                                    {% endblock headername %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t451__rightside t451__side t451__side_socials"></div>
+                </div>
+            </div>
+        </div>
+        <div class="t451m__overlay">
+            <div class="t451m__overlay_bg" style="background-color:#c5c5c5; "></div>
+        </div>
+        <div class="t451 t451m t451m__left" data-tooltip-hook="" style="">
+            <button type="button" class="t451m__close-button t451m__close t451m_opened" aria-label="Закрыть меню">
+                <div class="t451m__close_icon"><span style="background-color:#ffffff;"></span><span
+                        style="background-color:#ffffff;"></span><span style="background-color:#ffffff;"></span><span
+                        style="background-color:#ffffff;"></span></div>
+            </button>
+            <div class="t451m__container t-align_left">
+                <div class="t451m__top">
+                    <nav class="t451m__menu">
+                        <ul role="list" class="t451m__list t-menu__list">
+                            <li class="t451m__list_item">
+                                <a class="t-menu__link-item"
+                                href="{% url 'home' %}" data-menu-submenu-hook="" data-menu-item-number="1"
+                                style="color:#ffffff;font-size:21px;">Home</a>
+                            </li>
+                            <li class="t451m__list_item">
+                                <a class="t-menu__link-item"
+                                href="{% url 'people' %}" data-menu-submenu-hook="" data-menu-item-number="2"
+                                style="color:#ffffff;font-size:21px;">Personalities</a>
+                            </li>
+                            <li class="t451m__list_item">
+                                <a class="t-menu__link-item"
+                                href="{% url 'maps' %}" data-menu-submenu-hook="" data-menu-item-number="3"
+                                style="color:#ffffff;font-size:21px;">Maps</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="t451m__list_item">
+                                    <a class="t-menu__link-item"
+                                    href="{% url 'profile' %}" data-menu-submenu-hook="" data-menu-item-number="4"
+                                    style="color:#ffffff;font-size:21px;">Profile</a>
+                                </li>
+                                {% if user.editor_rights %}
+                                    <li class="t451m__list_item">
+                                        <a class="t-menu__link-item"
+                                        href="{% url 'instruments' %}" data-menu-submenu-hook="" data-menu-item-number="5"
+                                        style="color:#ffffff;font-size:21px;">Tools</a>
+                                    </li>
+                                {% endif %}
+                            {% endif %}
+                            {% block menuadvanced %}
+                            {% endblock menuadvanced %}
+
+                            {% if not request.user.is_authenticated %}
+                            <li class="t451m__list_item" style="position: absolute; bottom: 20px;">
+                                <a class="t-menu__link-item"
+                                href="{% url 'login' %}" data-menu-submenu-hook="" data-menu-item-number="1"
+                                style="color:#ffffff;font-size:21px;">Login</a>
+                            </li>
+                            {% else %}
+                            <li class="t451m__list_item" style="position: absolute; bottom: 20px;">
+                                <a class="t-menu__link-item"
+                                href="{% url 'logout' %}" data-menu-submenu-hook="" data-menu-item-number="1"
+                                style="color:#ffffff;font-size:21px;">Logout</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                <div class="t451m__rightside">
+
+                    <div class="t451m__rightcontainer"></div>
+                </div>
+            </div>
+        </div>
+        <script>t_onReady(function(){
+var rec = document.querySelector("#rec660687939");
+if (!rec) return
+rec.setAttribute('data-animationappear', 'off');
+rec.style.opacity = 1;
+t_onFuncLoad('t451_initMenu', function () {
+t451_initMenu('660687939');
+});
+t_onFuncLoad('t_menu__interactFromKeyboard', function () {
+t_menu__interactFromKeyboard('660687939');
+});
+});
+        </script>
+        <style>#rec660687939 .t-menu__link-item{
+}
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+#rec660687939 .t-menu__link-item,
+#rec660687939 .t-menu__link-item.t-active {
+opacity: 1 !important;
+}
+}
+        </style>
+    </div>
+</div>
+        {% endblock header %}
+
+
+    {% block content %}
+    {% endblock content %}
+
+        {% block footer %}
+<div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node"
+     data-tilda-project-id="8057011" data-tilda-page-id="40836874"
+     data-tilda-formskey="708e04c2f56f92cd3f84445be8057011" data-tilda-cookie="no" data-tilda-lazy="yes">
+
+    <div id="rec660352176" class="r t-rec t-rec_pt_90 t-rec_pb_90"
+         style="padding-top:60px;padding-bottom:70px;background-image: linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%);"
+         data-animationappear="off" data-record-type="144"
+         data-bg-color="linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%)"><!-- T134 -->
+         <div class="t134">
+            <div class="t-container">
+                <div class="t-col t-col_10 t-prefix_1">
+                    <div class="t134__logo t-title" field="title2">
+                        <div style="font-size: 30px;" data-customstyle="yes">
+                            <span style="color: #ffffffcc; font-weight: 300; letter-spacing: 3px;">SITIUM</span>
+                        </div>
+                    </div>
+                    <div class="t134__descr" field="descr"><br/>© VitalyNekrasovv@gmail.com, 2023<br/>All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        {% endblock footer %}
+</body>
+</html>

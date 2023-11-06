@@ -1,0 +1,18 @@
+{% extends 'registration.html' %}
+{% load static %}
+{% block regwrapper %}
+
+    <div class="t698__title t-title t-title_xs" field="title">Инструменты редактора сайта</div>
+    {% if user.editor_rights %}
+        <button
+            class="t142A__btn t-btn t-btn_md blackbutton"
+            onclick="location.href='{% url 'person_introduction' %}'">
+            Добавление исторической личности
+        </button>
+        <button
+            class="t142A__btn t-btn t-btn_md blackbutton"
+            onclick="location.href='{% url 'event_introduction' %}'">
+            Добавление события
+        </button>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'registration.html' %}
+
+{% load static %}
+
+
+
+{% block regwrapper %}
+    <script>
+    $(document).on('change', $('#id_need_call'), (function (e) {
+       $("[name='searchfield']").val(($("[name='name']").val() + ' ' + $("[name='biography']").val()).toLowerCase());
+
+    }))
+</script>
+<div class="content t-container " style="min-height:100vh;">
+    <div class="t698__title t-title t-title_xs" style="padding-top:100px;">Данные локальной карты</div>
+    <div>
+        <form role="form" enctype="multipart/form-data" action="" method='POST'
+            data-formactiontype="0" data-inputbox=".t-input-group"
+            class="t-form js-form-proccess t-form_inputs-total_3 "
+            data-success-callback="t698_onSuccess">
+            {% csrf_token %}
+            <div class="js-successbox t-form__successbox t-text t-text_md"
+                 aria-live="polite"
+                 style="display:none;">
+            </div>
+            <div class="t-form__inputsbox">
+                {% for field in form %}
+                <div class="t-input-group t-input-group_ph">
+                    <div class="t-input-block"
+                        style="border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; font-family: 'TildaSans',Arial,sans-serif; color: #FFFFFF;">
+                        {% if field.name == 'event_link' %}
+                            {{ field }}
+                        {% else %}
+                        {{ field }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                {% if exception_text != '' %}
+                <div class="t698__form-bottom-text t-text t-text_xs" field="text">{{ exception_text }}</div>
+                {% endif %}
+                <div class="t-form__submit">
+                    <button type="submit" class="blackbutton t-submit">
+                        Отправить данные на сайт
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

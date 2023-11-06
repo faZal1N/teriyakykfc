@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block addons %}
+    <link rel="stylesheet" href="{% static '/home/css/tilda-grid-3.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-blocks-page40837406.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-forms-1.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-cover-1.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="[% static 'home/css/fonts-tildasans.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+{% endblock %}
+
+{% block content %}
+    <div class="t-cover"
+         id="recorddiv660700506"
+         bgimgfield="img"
+         style="height:100vh; background-image:url('images/tild3562-3464-4364-a130-373566313864__-__resize__20x__1613766775_16-p-fon-.jpg');">
+        <div class="t-cover__carrier" id="coverCarry660700506" data-content-cover-id="660700506"
+             data-content-cover-bg="{% static 'home/images/tild3562-3464-4364-a130-373566313864__1613766775_16-p-fon-.jpg' %}"
+             data-display-changed="true" data-content-cover-height="100vh" data-content-cover-parallax=""
+             style="height:100vh;background-attachment:scroll; " itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop="image" content="{% static 'images/tild3562-3464-4364-a130-373566313864__1613766775_16-p-fon-.jpg' %}">
+        </div>
+        <div class="t-cover__filter"
+             style="height:100vh;background-color:#29221c;filter: alpha(opacity:70); KHTMLOpacity: 0.70; MozOpacity: 0.70; opacity: 0.70;">
+        </div>
+        <div class="t698">
+            <div class="t-container ">
+                <div class="t-width t-width_8 t698__mainblock">
+                    <div class="t-cover__wrapper t-valign_middle" style="height:100vh;">
+                        <div class="t698__mainwrapper" data-hook-content="covercontent">
+                            {% block regwrapper %}
+                                <div class="t698__title t-title t-title_xs" style="" field="title">
+                                    Зарегистрируйтесь на сайте бесплатно
+                                </div>
+                                <div>
+                                    <form id="form660700506" name='form660700506' role="form" action="" method='POST'
+                                          data-formactiontype="0" data-inputbox=".t-input-group"
+                                          class="t-form js-form-proccess t-form_inputs-total_3 "
+                                          data-success-callback="t698_onSuccess">
+                                        {% csrf_token %}
+                                        <div class="js-successbox t-form__successbox t-text t-text_md"
+                                             aria-live="polite"
+                                             style="display:none;">
+                                        </div>
+                                        <div class="t-form__inputsbox">
+                                            {% for i in form %}
+                                            <div class="t-input-group t-input-group_ph">
+                                                <div class="t-input-block"
+                                                     style="border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px;">
+                                                    {{ i }}
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            {% if exception_text != '' %}
+                                            <div class="t698__form-bottom-text t-text t-text_xs">{{ exception_text }}</div>
+                                            {% endif %}
+                                            <div class="t-form__submit">
+                                                <button type="submit" class="blackbutton t-submit">
+                                                    Регистрация
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (typeof jQuery !== 'undefined') {
+        $('#rec660700506').find('.js-form-proccess').on('tildaform:aftererror', function(e){
+        e.preventDefault();
+        t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660700506');});
+        });
+        $('.t698').bind('displayChanged',function(){
+        t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660700506');});
+        });
+        } else {
+        var formBlock = document.querySelector('#rec660700506 .js-form-proccess');
+        if (formBlock) {
+        formBlock.addEventListener('tildaform:aftererror', function(e){
+        e.preventDefault();
+        t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660700506');});
+        });
+        }
+        var wrapperBlock = document.querySelector('#rec660700506 .t698');
+        if (wrapperBlock) {
+        wrapperBlock.addEventListener('displayChanged',function(){
+        t_onFuncLoad('t698_fixcontentheight', function(){t698_fixcontentheight('660700506');});
+        });
+        }
+        }
+        window.addEventListener('load', function() {
+        setTimeout(function() {
+        t_onFuncLoad('t_cover__setRecalculatedHeight', function () {
+        var rec = document.getElementById('rec660700506');
+        if (rec) {
+        var content = rec.querySelector('div[data-hook-content]');
+        var contentHeight = content ? t_cover__getPureHeight(content) : 0;
+        t_cover__setRecalculatedHeight(rec, contentHeight);
+        }
+        });
+        }, 500);
+        });
+    </script>
+{% endblock %}

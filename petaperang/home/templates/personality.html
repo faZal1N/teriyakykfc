@@ -1,0 +1,48 @@
+{% extends 'people.html' %}
+
+{% load static %}
+
+{% block menuadvanced %}
+    <li class="t451m__list_item">
+        <a class="t-menu__link-item"
+        href="{% url 'personality_editing' obj.slug %}" data-menu-submenu-hook="" data-menu-item-number="5"
+        style="color:#ffffff;font-size:21px;">Edit it</a>
+    </li>
+{% endblock menuadvanced %}
+
+{% block headername %}
+    <span style="color: #ffffffcc; font-weight: 500; letter-spacing: 3px;">
+       SITIUM:
+    </span>
+    <span style="color: #ffffffcc; font-weight: 500;">
+        {{obj.name}}
+    </span>
+{% endblock headername %}
+
+{% block content %}
+    <div class="t403 t403__mainwrapper" data-hook-content="covercontent" style="text-align:center; padding:80px 20px 20px 20px; ">
+        <img class="t-width t-width_8 t403__mainblock shadowcontent" src="{{ obj.photo.url }}">
+        <div class="t403__text t-text t-text_md" style="color:#fff; background-color: rgba(59, 35, 1, 0.5);padding:10px;" >{{ obj.biography }}</div>
+        {% for ex in expansions %}
+            <a class="t403__heading t-heading t-heading_xs"
+                style="color:#fff; font-weight:300; text-shadow: 0px 3px 3px rgba(59, 35, 1,0.8), 0px 0px 9px rgba(59, 35, 1,0.9);"
+                href="{% url 'event_page' ex.slug %}">
+            {{ ex.name }}
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+{% block footer %}
+    <div id="rec660352176" class="r t-rec t-rec_pt_90 t-rec_pb_90"
+         style="padding-top:60px;padding-bottom:70px;background-image: linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%);"
+         data-animationappear="off" data-record-type="144"
+         data-bg-color="linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%)"><!-- T134 -->
+            <div class="t134 t134__logo t-title" field="title2" style="font-size: 30px; color: #ffffffcc; font-weight: 300; letter-spacing: 3px;">
+                SITIUM
+            </div>
+            <div class="t134__descr" field="descr">
+                <br/>© VitalyNekrasovv@gmail.com, 2023<br/>All Rights Reserved.
+            </div>
+    </div>
+{% endblock footer %}

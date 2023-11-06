@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block addons %}
+    <link rel="stylesheet" href="{% static 'home/css/tilda-grid-3.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-blocks-page40838189.min.css' %}" type="text/css" media="all"
+          onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/tilda-forms-1.0.min.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <link rel="stylesheet" href="{% static 'home/css/fonts-tildasans.css' %}" type="text/css" media="all" onerror="this.loaderr='y';"/>
+    <script nomodule src="{% static 'home/js/tilda-polyfill-1.0.min.js' %}" charset="utf-8"></script>
+    <style>
+        html, body {
+          height: 100%;
+        }
+        body {
+            display: flex;
+             flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <script>
+        $(function() {
+
+            function people_search(searchtext){
+                return $.ajax({
+                    method: "GET",
+                    data: {term: searchtext},
+                    url: "search/",
+                    async: false,
+                });
+            }
+
+            $('input[name=search_engine]').bind({
+                keyup: function(e){
+                    console.log (e.target.value);
+                    $.when(people_search(e.target.value)).done((data) => {
+                        console.log (data);
+                        people_to_window(data);
+                    });
+                }
+            });
+
+            function people_to_window(data){
+                $('#items_div').empty();
+                for(var item of data){
+                     $('#items_div').append(
+                         '<div class="t403__container-table t-width_12 shadowcontent" style="margin: 10px; background-color: #fff5e4;">'+
+                            '<a class="t403__link" href="'+item.slug+'">'+
+                                '<div class="t403__tcol2 t403__tcol2_flipped" >'+
+                                        '<div class="t403__title t-title t-title_xxs" style="padding:20px;">'+item.name+'</div>'+
+                                        '<div class="t403__descr t-descr t-descr_sm" style="padding:20px;">'+item.biography+'</div>'+
+                                '</div>'+
+                                '<div class="t403__tcol1">'+
+                                            '<img src="'+item.photo+'" style="max-width:100%;max-height:100%;">'+
+                                '</div>'+
+                            '</a>'+
+                         '</div>'
+                     );
+                };
+            };
+        });
+    </script>
+    <div class="content t-container " style="min-height:100vh;">
+        <div class="content t-container" style="padding-top:90px;padding-bottom:50px;">
+            <input type="text" name="search_engine"
+                   id="input_4914859299010"
+                   class="t-input js-tilda-rule"
+                   placeholder="Поиск исторической личности"
+                   style="color:#000000;border:1px solid #000000;">
+        </div>
+        <div class="t403 footer"  id="items_div" >
+        </div>
+    </div>
+{% endblock %}

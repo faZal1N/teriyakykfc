@@ -1,0 +1,40 @@
+{% extends 'registration.html' %}
+{% load static %}
+
+{% block regwrapper %}
+    <div class="t698__title t-title t-title_xs" field="title">Станьте редактором Sitium, {{ user.username }} </div>
+    <div>
+        <form id="form660700506" name='form660700506' role="form" action="" method='POST'
+            data-formactiontype="0" data-inputbox=".t-input-group"
+            class="t-form js-form-proccess t-form_inputs-total_3 "
+            data-success-callback="t698_onSuccess">
+            {% csrf_token %}
+            <div class="js-successbox t-form__successbox t-text t-text_md"
+                 aria-live="polite"
+                 style="display:none;">
+            </div>
+            <div class="t-form__inputsbox">
+                {% for field in form %}
+                <div class="t-input-group t-input-group_ph">
+                    <div class="t-input-block"
+                        style="border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; font-family: 'TildaSans',Arial,sans-serif; color: #FFFFFF;">
+                        {% if field.widget_type == 'checkbox' %}
+                            {{ field }}{{ field.label }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                {% if exception_text != '' %}
+                <div class="t698__form-bottom-text t-text t-text_xs" field="text">{{ exception_text }}</div>
+                {% endif %}
+                <div class="t-form__submit">
+                    <button type="submit" class="blackbutton t-submit">
+                        Запросить права редактора
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

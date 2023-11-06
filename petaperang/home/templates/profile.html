@@ -1,0 +1,32 @@
+{% extends 'registration.html' %}
+{% load static %}
+{% block regwrapper %}
+    <div class="t174__title t-title t-title_lg" style="color:#fff;padding:20px;" field="title">Ваш профиль</div>
+    <div class="t174__descr t-descr t-descr_lg" style="" field="descr">
+        <button class="profilevalue" onclick="location.href='{% url 'editor' %}?toedit=username'">Логин: {{ user.username }} </button><br/>
+        <button class="profilevalue" onclick="location.href='{% url 'editor' %}?toedit=first_name'">Имя: {% if user.first_name %} {{ user.first_name }} {% else %} Отсутствует {% endif %}</button><br/>
+        <button class="profilevalue" onclick="location.href='{% url 'editor' %}?toedit=second_name'">Фамилия: {% if user.second_name %} {{ user.second_name }} {% else %} Отсутствует {% endif %}</button><br/>
+        <button class="profilevalue" onclick="location.href='{% url 'getting_editor' %}?toedit=editor_rights'">Статус редактора: {% if user.editor_rights  %} Включен {% else %} Отсутствует {% endif %}</button><br/>
+        <button class="profilevalue" onclick="location.href='{% url 'editor' %}?toedit=phone_number'">Номер телефона: {% if user.phone_number %} {{ user.phone_number }} {% else %} Отсутствует {% endif %}</button><br/>
+        <button class="profilevalue" onclick="location.href='{% url 'editor' %}?toedit=email'">E-mail адрес: {% if user.email %} {{ user.email }} {% else %} Отсутствует {% endif %}</button>
+    </div>
+{% if not user.email_verified %}
+    <button
+        class="t142A__btn t-btn t-btn_md blackbutton"
+        onclick="location.href='{% url 'email_activating_form' %}'">
+        Подтвердить адрес электронной почты
+    </button>
+{% endif %}
+    <button
+        class="t142A__btn t-btn t-btn_md blackbutton"
+        onclick="location.href='{% url 'editor' %}'">
+        Изменить данные профиля
+    </button>
+{% if not user.editor_rights %}
+    <button
+        class="t142A__btn t-btn t-btn_md blackbutton"
+        onclick="location.href='{% url 'getting_editor' %}'">
+        Получить права редактора
+    </button>
+{% endif %}
+{% endblock %}

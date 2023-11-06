@@ -1,0 +1,136 @@
+{% extends 'maps.html' %}
+
+{% load static %}
+
+{% block menuadvanced %}
+    <li class="t451m__list_item">
+        <a class="t-menu__link-item"
+        href="{% url 'event_editing' obj.slug %}" data-menu-submenu-hook="" data-menu-item-number="5"
+        style="color:#ffffff;font-size:21px;">Edit it</a>
+    </li>
+
+    <li class="toggle toggle_on t451m__list_item">
+        <a class="t-menu__link-item"
+        href="#" onclick="toogle_function();" data-menu-submenu-hook="" data-menu-item-number="5"
+        style="color:#ffffff;font-size:21px;">Hide people</a>
+    </li>
+
+    <li class="toggle toggle_off t451m__list_item" style="display:none">
+        <a class="t-menu__link-item"
+        href="#" onclick="toogle_function();" data-menu-submenu-hook="" data-menu-item-number="5"
+        style="color:#ffffff;font-size:21px;">Show people</a>
+    </li>
+<script>
+    function toogle_function(){$(".toggle" ).toggle("slow");}
+</script>
+
+{% endblock menuadvanced %}
+
+{% block headername %}
+    <span style="color: #ffffffcc; font-weight: 500; letter-spacing: 3px;">
+       SITIUM:
+    </span>
+    <span style="color: #ffffffcc; font-weight: 500;">
+        {{obj.name}}
+    </span>
+{% endblock headername %}
+
+{% block content %}
+    <script src="{% static 'home/js/map.js' %}" type="text/javascript"></script>
+    <script>
+        ymaps.ready(init);
+        function init() {
+            function insert_map (item) {
+                var myMap = new ymaps.Map("map", {
+                    center: [item.x, item.y],
+                    zoom: item.zoom,
+                    controls: [], // Убираем все элементы управления
+                    size: (100, 100),
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+                myMap.geoObjects.add(new ymaps.Placemark([item.x, item.y], {
+                    iconCaption: item.name,
+                    balloonContent: (item.name + '<br>' + item.description + '<br>' + item.begin + '-' + item.end),
+                }, {
+                    preset: 'islands#dotIcon',
+                    iconColor: '#735184'
+                }))
+                var kmls = ymaps.geoXml.load(item.kml);
+                kmls.then(function(res) { // Обработка полученного асинхронно ответа.
+                    myMap.geoObjects.add(res.geoObjects);     // Добавление объектов на карту.
+                });
+
+                $.when(items_search("{{ obj.id }}", "{% url 'event_search_local_maps' %}")).done((data) => {
+                    console.log(data);
+                    for(var item of data){
+                            myMap.geoObjects.add(new ymaps.Placemark([item.x, item.y], {
+                            iconCaption: item.name,
+                            balloonContent: (item.name + '<br><a target=_blank href='+item.small_map+'><img style="width:400px;height:400px:" src=' + item.small_map +'></a><br>'+ item.description + '<br>' + item.begin + '-' + item.end),
+                        }, {
+                            preset: 'islands#dotIcon',
+                            iconColor: '#735184'
+                        }))
+                   }
+                });
+
+            }
+
+                 function items_search(searchtext, url){
+                    return $.ajax({
+                        method: "GET",
+                        data: {term: searchtext},
+                        url: url,
+                        async: false,
+                    });
+                }
+
+                $.when(items_search("{{ obj.id }}", "{% url 'event_search_id' %}")).done((data) => {
+                    insert_map(data[0]);
+                });
+
+                $.when(items_search("{{ obj.id }}", "{% url 'event_participants' %}")).done((data) => {
+                console.log (data);
+                   for(var item of data){
+                        $('#peoples_div').append(
+                            '<a style="position:relative;" href="/people/'+item.slug+'">'+
+                                '<div style="position:relative; height:250px; margin-top:10px;">'+
+                                    '<img class="t-height  t403__mainblock shadowcontent" style="height:250px;" src='+item.photo+'>'+
+                                    '<div class=".t-descr_sm"'+
+                                        'style="position:absolute; width:50%; text-align:left; bottom:0px;padding-left:20px; color:#fff; " >'+
+                                        item.name+
+                                        '</div>'+
+                                '</div>'+
+                            '</a>'
+                         );
+                   }
+                });
+
+        };
+    </script>
+    <div class="t403 t403__mainwrapper" data-hook-content="covercontent" style=" text-align:center; padding:65px 0px 0px 0px; ">
+        <div class=" width:100%; t403__mainblock">
+            <div style="height:100vh; width:100%;" id="map"></div>
+        </div>
+        <div id="peoples_div" class="toggle toggle_on flex-container wrap t403__uptitle t-uptitle t-uptitle_md"
+             style=" border:none; position: absolute; top:55px; z-index:900; color:#fff; text-shadow: 0px 3px 3px rgba(59, 35, 1,0.8), 0px 0px 9px rgba(59, 35, 1,0.9);">
+        </div>
+
+        {% for ex in expansions %}
+        <a class="t403__text t-text t-text_md" href=""> ex.name </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block footer %}
+    <div id="rec660352176" class="r t-rec t-rec_pt_90 t-rec_pb_90"
+         style="padding-top:60px;padding-bottom:70px;background-image: linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%);"
+         data-animationappear="off" data-record-type="144"
+         data-bg-color="linear-gradient(0turn,rgb(59 35 1) 0%,rgb(138 98 33) 100%)"><!-- T134 -->
+            <div class="t134 t134__logo t-title" field="title2" style="font-size: 30px; color: #ffffffcc; font-weight: 300; letter-spacing: 3px;">
+                SITIUM
+            </div>
+            <div class="t134__descr" field="descr">
+                <br/>© VitalyNekrasovv@gmail.com, 2023<br/>All Rights Reserved.
+            </div>
+    </div>
+{% endblock footer %}
